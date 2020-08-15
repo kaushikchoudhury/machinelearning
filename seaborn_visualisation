@@ -1,1 +1,11 @@
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
 
+
+
+bird= sns.load_dataset("penguins")
+g = sns.FacetGrid(bird, col="island", hue="species")
+g.map(plt.scatter, "flipper_length_mm", "body_mass_g", alpha=.6)
+g.add_legend()
+plt.show()
